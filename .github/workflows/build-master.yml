@@ -20,7 +20,7 @@ jobs:
           
       - run: npm install --save @flybywiresim/fragmenter
 
-      - run: mkdir scenery/ContentInfo/${{ github.event.repository.name }}
+      - run: mkdir -p scenery/ContentInfo/${{ github.event.repository.name }}
 
       - run: cp resource/Thumbnail.jpg scenery/ContentInfo/${{ github.event.repository.name }}/
 
