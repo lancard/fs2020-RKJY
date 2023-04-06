@@ -27,7 +27,9 @@ const followDirectory = (dir, obj) => {
 const generateFS2020LayoutJson = () => {
     try {
         const layout = { content: [] };
-        followDirectory("scenery", layout.content);
+        process.chdir('./scenery');
+        followDirectory(".", layout.content);
+        process.chdir('..');
         fs.writeFileSync("./scenery/layout.json", JSON.stringify(layout, null, '\t'));
     } catch (e) {
         console.error(e);
