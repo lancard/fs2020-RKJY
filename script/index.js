@@ -19,7 +19,7 @@ const followDirectory = (dir, obj) => {
     catch (e) {
         if (path.basename(dir) == "manifest.json")
             return;
-        obj.push({ path: dir, size: getFilesizeInBytes(dir), date: 132424775057196676 });
+        obj.push({ path: dir.substring(2), size: getFilesizeInBytes(dir), date: 132424775057196676 });
         return;
     }
 }
