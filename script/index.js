@@ -2,6 +2,12 @@ const fs = require("fs");
 const path = require('path');
 const fragmenter = require("@flybywiresim/fragmenter");
 
+function getFilesizeInBytes(filename) {
+    var stats = fs.statSync(filename);
+    var fileSizeInBytes = stats.size;
+    return fileSizeInBytes;
+}
+
 const followDirectory = (dir, obj) => {
     try {
         const list = fs.readdirSync(dir);
@@ -13,7 +19,7 @@ const followDirectory = (dir, obj) => {
     catch (e) {
         if (path.basename(dir) == "manifest.json")
             return;
-        obj.push({ path: dir, size: 1, date: 132424775057196676 });
+        obj.push({ path: dir, size: getFilesizeInBytes(dir), date: 132424775057196676 });
         return;
     }
 }

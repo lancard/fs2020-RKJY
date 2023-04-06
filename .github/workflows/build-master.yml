@@ -20,11 +20,17 @@ jobs:
           
       - run: npm install --save @flybywiresim/fragmenter
 
+      - run: mkdir scenery/ContentInfo/${{ github.event.repository.name }}
+
+      - run: cp resource/Thumbnail.jpg scenery/ContentInfo/${{ github.event.repository.name }}/
+
       - run: node script/index.js
 
       - run: git tag -d production || true
 
       - run: git push origin :production || true
+
+      - run: sleep 3
 
       - name: Create Release
         id: create_release
