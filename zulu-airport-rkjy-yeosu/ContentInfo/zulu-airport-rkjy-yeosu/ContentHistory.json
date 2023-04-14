@@ -1,0 +1,10 @@
+{
+  "package-name": "zulu-airport-rkjy-yeosu",
+  "items": [
+    {
+      "type": "Airport",
+      "content": "RKJY",
+      "revision": 1
+    }
+  ]
+}
